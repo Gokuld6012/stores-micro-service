@@ -1,6 +1,14 @@
 ## Description ##
 Simple microservice with api-gateway built on node js, services built on go. All the internal service calls through gRPC.
 
+## Todo ##
+
+- [ ] DB integration
+- [ ] Authentication using JWT
+- [ ] CI Integration
+
+## Folder structure ##
+
 ```
 project
 │   README.md 
@@ -46,4 +54,36 @@ project
 │   └───proto
 │        │____product.pb.go
 │        │____product.proto
+```
+
+## Getting started ##
+
+
+```bash
+# Clone the repo
+
+# Change directory
+cd api-gateway
+
+# To run the api-gateway
+docker-composer up
+
+# Change directory
+cd auth-service
+
+## To build the docker
+make docker-build
+
+## To run the container
+make docker-run
+
+# Change directory
+cd product-service
+
+## To build the docker
+make docker-build
+
+## To run the container
+make docker-run
+
 ```
