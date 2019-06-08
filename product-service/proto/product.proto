@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package product;
+
+service Product {
+    rpc GetTestProductResponse(ProductTestRequest) returns (ProductTestResponse) {};
+}
+
+message ProductTestRequest {}
+
+message ProductTestResponse {
+    string message = 1;
+}
