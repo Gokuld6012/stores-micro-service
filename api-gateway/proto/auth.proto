@@ -4,10 +4,35 @@ package auth;
 
 service Auth {
     rpc GetTestResponse(TestRequest) returns (TestResponse) {};
+    rpc RegisterNewUser(RegisterUserRequest) returns (Response) {};
+    rpc Login(LoginRequest) returns (Response) {};
 }
 
 message TestRequest {}
 
 message TestResponse {
     string message = 1;
+}
+
+message RegisterUserRequest {
+    string username = 1;
+    string firstname = 2;
+    string lastname = 3;
+    string password = 4;
+}
+
+message UserCreationResponse {
+    int32 statusCode = 1;
+    string responseMessage = 2;
+}
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message Response {
+    int32 statusCode = 1;
+    string responseMessage = 2;
+    string token = 3; // for login response
 }
